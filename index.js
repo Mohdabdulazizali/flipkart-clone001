@@ -1,29 +1,81 @@
-const express = require('express');
-const connectDB = require('./db');
-const authRoutes = require('./routes/auth');
-const dotenv = require('dotenv');
-const cors = require('cors');
+// footer and content page load 
+document.addEventListener("DOMContentLoaded", () => {
+  const components = [
+    // { id: "content-page", url: "pages/content-page.html" },
+    { id: "footer", url: "footer/footer.html" },
+  ];
 
-dotenv.config();
+  components.forEach((component) => {
+    fetch(component.url)
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById(component.id).innerHTML = data;
+      })
+      .catch((error) =>
+        console.error(`Error loading ${component.url}:`, error)
+      );
+  });
+});
+// end -footer
 
-const app = express();
 
-// cors added
-app.use(cors());
+// Show or hide the "Go to Top" button based on scroll position
+ document.addEventListener("DOMContentLoaded", function () {
+  const backToTopButton = document.getElementById('goToTopBtn');
 
-// Connect Database
-connectDB();
+  function checkButtonVisibility() {
+      if (window.innerWidth > 100 && window.scrollY > 100) {
+          backToTopButton.style.display = 'block';
+      } else {
+          backToTopButton.style.display = 'none';
+      }
+  }
 
-// Init Middleware
-app.use(express.json({ extended: false }));
+// Show or hide the "Go to Top" button based on scroll position
+window.addEventListener("scroll", function() {
+    var scrollToTopBtn = document.getElementById("goToTopBtn");
+    if (window.scrollY > 100) {
+        scrollToTopBtn.classList.remove("hidden");
+    } else {
+        scrollToTopBtn.classList.add("hidden");
+    }
+});
 
-// Define Routes
-app.use('/api', authRoutes);
 
-app.get('/',()=>{
-    '<h1>Server Started</h1>'
-})
+  window.addEventListener('scroll', checkButtonVisibility);
+  window.addEventListener('resize', checkButtonVisibility);
 
-const PORT = process.env.PORT || 5000;
+  backToTopButton.addEventListener('click', function () {
+      window.scrollTo({
+          top: 0,
+          behavior: 'smooth' 
+      });
+  });
+  checkButtonVisibility();
+});
 
-app.listen(PORT, () => console.log(`Server started on port http://localhost:${PORT}`));
+
+
+// loader
+// old
+// setTimeout(function() {
+//     document.getElementById('loader').style.display = 'none';
+//   }, 2000);
+
+// new
+  document.addEventListener("DOMContentLoaded", function() {
+		const loader = document.querySelector(".loader-container");
+		setTimeout(function() {
+			loader.style.display = "none";
+		}, 2000);
+	});
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch('../footer/footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading footer:', error));
+});
