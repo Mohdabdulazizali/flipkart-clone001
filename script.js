@@ -1,53 +1,11 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.getElementById('sellForm');
-    const formSteps = Array.from(document.querySelectorAll('.form-step'));
-    const nextButtons = Array.from(document.querySelectorAll('.btn-next'));
-    const prevButtons = Array.from(document.querySelectorAll('.btn-prev'));
-    const submitButton = form.querySelector('.btn-submit');
-    
-    let currentStep = 0;
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
 
-    nextButtons.forEach((button, index) => {
-        button.addEventListener('click', () => {
-            if (validateFormStep(index)) {
-                currentStep++;
-                updateFormSteps();
-            }
-        });
-    });
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
 
-    prevButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-            currentStep--;
-            updateFormSteps();
-        });
-    });
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        Swal.fire(
-            'Good job!',
-            'Form Submitted Successfully!',
-            'success'
-        );
-    });
-
-    function updateFormSteps() {
-        formSteps.forEach((step, index) => {
-            step.classList.toggle('form-step-active', index === currentStep);
-        });
-    }
-
-    function validateFormStep(index) {
-        const inputs = formSteps[index].querySelectorAll('input');
-        for (let input of inputs) {
-            if (!input.value) {
-                alert(`Please fill in the ${input.previousElementSibling.innerText}`);
-                return false;
-            }
-        }
-        return true;
-    }
-
-    updateFormSteps();
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
 });
