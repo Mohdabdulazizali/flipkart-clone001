@@ -4,170 +4,293 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#2874F0" id="themeColor" />
-    <title>Flipkart Plus | Membership Benefits</title>
+    <title>Sell Online - start Selling Online On Flipkart Seller Hub</title>
     <link rel="icon" type="image/x-icon" href="../img/flipkart_lite.png" />
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
-    <link rel="stylesheet" href="plus.css" />
+    <link rel="stylesheet" href="./style.css" />
     <style>
-         #progress-container {
-    position: fixed ;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 15px;
-    z-index: 99990;
-    /* background: #f3f3f3; */
-}
+        #progress-container {
+            position: fixed;
+            top: 0px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            z-index: 99990;
+        }
 
-#progress-bar {
-    height: 53%;
-    width: 0;
-    background: linear-gradient(90deg, rgb(0, 72, 255) 0%, rgb(153, 187, 255) 50%, rgb(0, 184, 250) 100%);
-    box-shadow: 0 0 4px rgba(0, 166, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
-    transition: width 0.09s ease-in-out;
-    border-radius: 10px;
-}
+        #progress-bar {
+            height: 53%;
+            width: 0;
+            background: linear-gradient(90deg, rgb(0, 72, 255) 0%, rgb(153, 187, 255) 50%, rgb(0, 184, 250) 100%);
+            box-shadow: 0 0 4px rgba(0, 166, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.7);
+            transition: width 0.09s ease-in-out;
+            border-radius: 10px;
+        }
 
+        .sell-online-form {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
 
+        .sell-online-form h2 {
+            margin-top: 0;
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2874F0;
+        }
+
+        .sell-online-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .sell-online-form .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .sell-online-form .form-group input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .sell-online-form .btn {
+            padding: 12px 20px;
+            border: none;
+            background-color: #2874F0;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sell-online-form .btn:hover {
+            background-color: #1a5bbf;
+        }
+
+        .sell-online-form .btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .sell-online-form .form-step {
+            display: none;
+        }
+
+        .sell-online-form .form-step-active {
+            display: block;
+        }
+
+        .sell-online-form .form {
+            margin-top: 20px;
+        }
+
+        .sell-online-form .step-title {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #333;
+            text-align: center;
+        }
+
+        .sell-online-form .btn-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .sell-online-form .btn-group .btn {
+            margin: 5px;
+        }
     </style>
 </head>
 <body>
-    
-<div id="progress-container">
-    <div id="progress-bar"></div>
-  </div>
-
-  <script>
-        
-    window.addEventListener('scroll', function() {
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        document.getElementById('progress-bar').style.width = scrolled + '%';
-    });
-    </script>
-  
-
-    <header id="header-plus" class="text-center text-secondary fs-4">
-        Flipkart Plus Membership
+    <header id="header-orders" class="text-center text-secondary fs-4">
+        This is Header
     </header>
 
-    <section>
-        <style>
-            .carousel-inner {
-                height: 400px;
-            }
-            
-            .carousel-item {
-                height: 400px;
-            }
-            
-            .carousel-item img {
-                height: 100%;
-                object-fit: cover;
-            }
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
 
-            section .container {
-                padding: 20px;
-            }
+    <script>
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progress-bar').style.width = scrolled + '%';
+        });
+    </script>
 
-            .product-list {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center;
-                transition: transform 0.5s ease-in-out;
-            }
-
-            .product-list:hover {
-                transform: translateX(-10px);
-            }
-
-            .product {
-                background-color: white;
-                padding: 20px;
-                border-radius: 4px;
-                width: calc(25% - 20px);
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                transition: box-shadow 0.3s ease-in-out;
-            }
-
-            .product:hover {
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            }
-
-            .product img {
-                width: 100%;
-                border-bottom: 1px solid #eee;
-                padding-bottom: 15px;
-                transition: transform 0.3s ease-in-out;
-            }
-
-            .product img:hover {
-                transform: scale(1.1);
-            }
-
-            .product .name {
-                font-size: 18px;
-                font-weight: bold;
-                margin: 10px 0;
-                transition: color 0.3s ease-in-out;
-            }
-
-            .product .name:hover {
-                color: #97b3e0;
-            }
-
-            .product .price {
-                color: #2874f0;
-                font-size: 16px;
-                font-weight: bold;
-                transition: color 0.3s ease-in-out;
-            }
-
-            .product .price:hover {
-                color: #007bff;
-            }
-        </style>
-        <h3 class="text-center">Welcome to Flipkart Plus Zone</h3>
-        
-        <!-- Bootstrap Carousel for Banner Images -->
-        <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <div class="container orders">
+        <div class="text">
+            <div class="div1">
+                <h1 class="Selling">Sell Online with Flipkart</h1>
+                <main>
+                    <ul>
+                        <li>Sell to 45 crore+ Flipkart customers</li>
+                        <li>7+ days secure & regular payments</li>
+                        <li>Low cost of doing business</li>
+                        <li>Access to The Big Billion Days & more</li>
+                        <li>One click Seller Support</li>
+                    </ul>
+                </main>
             </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://images.thequint.com/thequint/2018-08/05043882-7588-48ca-aaf8-13786bdcfb23/3e8a80bd_a21b_4f6e_aec3_b49fb417e1f5.jpg" class="d-block w-100" alt="First slide">
+
+            <h2>Seller Success Stories</h2>
+            <p>Flipkart offers a diverse range of over 3000+ categories where you can sell your products. These categories represent just a fraction of the wide variety available on Flipkart, providing ample opportunities for sellers to showcase their products to a large customer base. Here are some popular categories to consider for online selling:</p>
+        </div>
+        <div class="bg-img">
+            <img src="Desktop_sell.png" alt="Sell Online">
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Create Account</h2>
+        <p>Creating your Flipkart seller account is a quick process, taking less than 10 minutes, and requires only 3 documents. Follow the checklist to ensure a seamless account creation experience. By having these documents ready, you can streamline the account creation process and get started on Flipkart as an online seller in no time.</p>
+        <p>* for selling in all categories except for book<br>** for selling under books category</p>
+
+        <div class="gstin-box">
+            <h3>Don’t have a GSTIN?</h3>
+            <p>Follow the steps below to generate for your online business.</p>
+            <div class="steps">
+                <div class="step">
+                    <p><a href="https://www.gst.gov.in">Register / Login to www.gst.gov.in</a></p>
                 </div>
-                <div class="carousel-item">
-                    <img src="https://i.gadgets360cdn.com/large/Flipkart-plus-screenshot_1539013276085.jpg" class="d-block w-100" alt="Second slide">
+                <div class="step">
+                    <p>Fill in the GST Enrolment Application Form</p>
                 </div>
-                <div class="carousel-item">
-                    <img src="https://storiesflistgv2.blob.core.windows.net/stories/2023/08/banner.jpg" class="d-block w-100" alt="Third slide">
+                <div class="step">
+                    <p>Submit Enrolment Application</p>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
-        
-        <div class="container">
-            <div class="product-list" id="productList"></div>
-        </div>
-    </section>
 
-    <div id="btmTxtP" class="container-fluid" style="background: #f3eff3;"></div>
-    <footer id="footer-plus" style="background-color: #293649 !important"></footer>
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="plus.js"></script>
+        <p>Flipkart offers a diverse range of over 3000+ categories where you can sell your products. These categories represent just a fraction of the wide variety available on Flipkart, providing ample opportunities for sellers to showcase their products to a large customer base. Here are some popular categories to consider for online selling:</p>
+    </div>
+
+    <div class="container">
+        <h2>Grow Faster</h2>
+        <p>
+            At Flipkart, we recognize that there may be times when you require additional assistance for your online business. That's why, with your Flipkart seller account, you gain access to a diverse range of tools and support functions designed to foster business growth. These include:
+        </p>
+        <ul>
+            <li>Price Recommendation Tool: Helps you determine optimal pricing for your products.</li>
+            <li>Product Recommendation Tool: Suggests popular and trending products to expand your product selection.</li>
+            <li>Flipkart Ads: Enables you to advertise your products and reach a larger customer base.</li>
+            <li>Paid Account Management services: Offers dedicated account management support for personalised guidance.</li>
+            <li>Catalog & Photoshoot services: Assists with creating high-quality product catalogues and images.</li>
+            <li>Shopping Festivals and more: Participate in exciting sales events and promotional campaigns.</li>
+        </ul>
+        <p><a href="#">Know more</a> on how to grow your business</p>
+    </div>
+
+    <div class="help-support">
+        <h2>Help & Support</h2>
+        <p>What sets us apart is our exceptional Flipkart seller support assistance. We prioritize your needs and are committed to providing you with prompt assistance, whether you have questions, doubts, or require any kind of support for your business. Our dedicated team is here to help you every step of the way, ensuring that you have a smooth and successful selling experience on Flipkart. Feel free to reach out to us whenever you need assistance - we're always here to support you.</p>
+        <p><a href="#">Know more</a> about the assistance we offer.</p>
+        <p>A step-by-step guide to help with your Flipkart account creation can be <a href="#">downloaded from here</a>.</p>
+    </div>
+
+    <div class="sell-online-form">
+        <h2>Start Selling on Flipkart</h2>
+        <div id="step1" class="form-step form-step-active">
+            <div class="step-title">Step 1: Business Details</div>
+            <form>
+                <div class="form-group">
+                    <label for="business-name">Business Name</label>
+                    <input type="text" id="business-name" name="business-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="gstin">GSTIN</label>
+                    <input type="text" id="gstin" name="gstin" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn next-btn">Next</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="step2" class="form-step">
+            <div class="step-title">Step 2: Personal Details</div>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="mobile">Mobile</label>
+                    <input type="text" id="mobile" name="mobile" required>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn prev-btn">Previous</button>
+                    <button type="button" class="btn next-btn">Next</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="step3" class="form-step">
+            <div class="step-title">Step 3: Bank Details</div>
+            <form>
+                <div class="form-group">
+                    <label for="account-number">Account Number</label>
+                    <input type="text" id="account-number" name="account-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="ifsc">IFSC Code</label>
+                    <input type="text" id="ifsc" name="ifsc" required>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn prev-btn">Previous</button>
+                    <button type="button" class="btn submit-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nextBtns = document.querySelectorAll('.next-btn');
+            const prevBtns = document.querySelectorAll('.prev-btn');
+            const formSteps = document.querySelectorAll('.form-step');
+
+            let formStepsNum = 0;
+
+            nextBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    formStepsNum++;
+                    updateFormSteps();
+                });
+            });
+
+            prevBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    formStepsNum--;
+                    updateFormSteps();
+                });
+            });
+
+            function updateFormSteps() {
+                formSteps.forEach(formStep => {
+                    formStep.classList.contains('form-step-active') && formStep.classList.remove('form-step-active');
+                });
+                formSteps[formStepsNum].classList.add('form-step-active');
+            }
+        });
+    </script>
 </body>
 </html>
